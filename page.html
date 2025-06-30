@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Inter font from Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+
+
+    <title>Wataru Ogata Portfolio</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        #wrapper {
+            width: 100%;
+            min-width: 1200px;
+        }
+
+        header,
+        section,
+        footer {
+            margin: auto;
+        }
+
+        nav {
+            background: #000;
+            color: #fff;
+            height: 60px;
+            padding: 0px 15px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            min-width: 1020px;
+            position: fixed;
+            top: 0;
+            z-index: 99;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        nav #logo {
+            width: 200px;
+            white-space: nowrap;
+            font-size: 20px;
+            font-weight: normal;
+        }
+
+        #nav_box {
+            width: 100%;
+            position: relative;
+            margin: auto;
+            height: 60px;
+        }
+
+        /* navigation */
+        #nav {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 400px;
+            display: flex;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        #nav a {
+            text-align: center;
+            line-height: 60px;
+        }
+
+        #nav a:first-child {
+            width: 80px;
+        }
+
+        #nav a:nth-child(2) {
+            width: 86px;
+        }
+
+        /* social media icon */
+        #social {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        #social a {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            background: #fff;
+        }
+
+        #social a:nth-child(1) {
+            background: #fff;
+        }
+
+        #social a:nth-child(2) {
+            background: #fff;
+        }
+
+        #social a:nth-child(3) {
+            background: #fff;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin: 0;
+        }
+
+        /* herosection */
+        #hero {
+            margin-top: 60px;
+            height: auto;
+        }
+
+        #hero_con {
+            width: 1020px;
+            height: 510px;
+            display: flex;
+            position: relative;
+            margin: 190px auto 60px;
+            justify-content: space-between;
+            gap: 0px;
+        }
+
+        #hero_con div {
+            height: 100%;
+            position: relative;
+        }
+
+        /* leftside */
+        #hero_con div:first-child {
+            width: 490px;
+        }
+
+        /* rightside */
+        #hero_con div:last-child {
+            width: 510px;
+        }
+
+        /* project_title */
+        #hero_con div:first-child h1 {
+            font-size: 43px;
+            line-height: 1.1;
+            color: #000;
+            font-weight: 700;
+            margin: 10px 0 20px;
+        }
+
+        /* case study */
+        #hero_con div:first-child p.case {
+            font-size: 18px;
+            line-height: 1.0;
+            color: #ff9201;
+            font-weight: 500;
+            margin: 0 0 10px;
+        }
+
+        /* category */
+        #hero_con div:first-child p.cate {
+            font-size: 18px;
+            line-height: 1.0;
+            color: #919191;
+            font-weight: normal;
+            margin: 20px 0 50px 0;
+        }
+
+        /* description */
+        #hero_con div:first-child p.desc {
+            font-size: 18px;
+            line-height: 1.3;
+            color: #000;
+            font-weight: 300;
+            margin: auto 0;
+        }
+
+        /* My role */
+        #hero_con div:first-child p.role {
+            position: absolute;
+            bottom: 0;
+            font-size: 18px;
+            line-height: 1.3;
+            color: #000;
+            font-weight: 300;
+            margin: auto 0;
+        }
+
+        #hero_con div:first-child p.role span {
+            color: #919191;
+        }
+
+        /* project image */
+        #hero_con div:last-child {
+            background: #eee;
+        }
+
+
+        .overview,
+        .skills,
+        .experience {
+            display: grid;
+            gap: 50px 30px;
+        }
+
+
+        .overview {
+            position: relative;
+            width: 1020px;
+            height: auto;
+            margin: 25px auto;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        #overview {
+            position: relative;
+            width: 100%;
+            background: #FFFEEB;
+            padding: 50px 0;
+        }
+
+        #overview h2 {
+            text-align: center;
+            position: relative;
+            width: 100%;
+            font-size: 28px;
+            font-weight: 400;
+        }
+
+        .over_con {
+            width: 320px;
+            height: auto;
+            text-align: center;
+        }
+
+        .over_con h3 {
+            width: 100%;
+            font-size: 24px;
+            font-weight: normal;
+            border: double 2px;
+            border-right: none;
+            border-left: none;
+            margin: 0 0 10px;
+        }
+
+        .over_con .project_img {
+            width: 100%;
+            height: 112px;
+            background: #000;
+        }
+
+        .over_con h4.project_tit {
+            font-size: 22px;
+            height: 44px;
+            line-height: 1.2;
+            padding: 10px 0;
+            margin: 0;
+        }
+
+        .over_con h4.project_tit.line_1 {
+            line-height: 44px;
+        }
+
+        .over_con span.line {
+            display: block;
+            position: relative;
+            margin: auto;
+            width: 50px;
+            height: 4px;
+            background: #FF9201;
+            margin: 20px auto 10px;
+        }
+
+        .over_con p {
+            position: relative;
+            width: 100%;
+            padding: 10px 0;
+            color: #000;
+            font-size: 18px;
+            line-height: 1.3;
+            text-align: left;
+            font-weight: 400;
+        }
+
+        #design {
+            width: 100%;
+            height: auto;
+            text-align: center;
+            padding: 60px 0 0;
+        }
+
+        #design h2 {
+            font-size: 43px;
+            color: #000;
+            font-weight: 700;
+        }
+
+        #design #process .design_con {
+            padding: 60px 0;
+            margin: -8px auto -18px;
+        }
+
+        #design #process .design_con:first-child {
+            padding-top: 30px;
+        }
+
+        #design #process .line {
+            display: inline-block;
+            width: 1020px;
+            height: 1px;
+            background: #000;
+        }
+
+
+        #design .design_con h3 {
+            color: #000;
+            font-size: 28px;
+            font-weight: 400;
+            margin: 0px 0 40px;
+        }
+
+        #design .design_con h4 {
+            color: #000;
+            width: 640px;
+            position: relative;
+            margin: 40px auto 10px;
+            text-align: left;
+            font-size: 18px;
+            line-height: 1.3;
+            font-weight: 400;
+        }
+
+        #design .design_con h4.bold {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        #design .design_con h4 span {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin-right: 5px;
+            line-height: 18px;
+            border-radius: 20px;
+            background: #FF9100;
+        }
+
+        #design .design_con p {
+            width: 640px;
+            position: relative;
+            text-align: left;
+            font-size: 18px;
+            line-height: 1.3;
+            margin: 10px auto;
+        }
+
+        #design .design_con p span.narrow {
+            letter-spacing: -0.02em;
+        }
+
+        #design .design_con .process_img {
+            width: 1020px;
+            position: relative;
+            margin: 40px auto 5px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        #design .design_con .process_img.nocap {
+            margin-bottom: 40px;
+        }
+
+        #design .design_con p.cap {
+            width: 640px;
+            position: relative;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 400;
+            color: #696969;
+            line-height: 1.3;
+            margin: 10px auto 40px;
+        }
+
+        #design .design_con .design_flex {
+            display: flex;
+            width: 640px;
+            position: relative;
+            margin: auto;
+        }
+
+        #design .design_con ul {
+            list-style: none;
+            text-align: left;
+            padding: 0;
+            display: block;
+        }
+
+        #design .design_con ul:first-child {
+            margin: 0 20px 0 0;
+        }
+        #design .design_con ul:nth-child(2) {
+            margin: 0;
+        }
+
+        #design .design_con ul:first-child li {
+            width: 166px;
+        }
+
+        #design .design_con ul li {
+            font-size: 18px;
+            line-height: 1.2;
+            margin: 0 0 5px 0;
+        }
+
+
+        footer {
+            background: #000;
+            text-align: center;
+            font-size: 18px;
+            line-height: 45px;
+            color: rgba(255, 255, 255, 0.75);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="wrapper" class="page">
+        <nav>
+            <div id="logo"><a href="index.html">WATARU OGATA</a></div>
+
+            <div id="nav_box">
+                <!-- navigation -->
+                <div id="nav">
+                    <a href="#work">WORK</a>
+                    <a href="#about">ABOUT</a>
+                    <a href="#contact">CONTACT</a>
+                </div>
+            </div>
+
+            <!-- social media -->
+            <div id="social">
+                <a href="#social01"><img src="images/social_icon01.png"></a>
+                <a href="#social02"><img src="images/social_icon02.png"></a>
+                <a href="#social03"><img src="images/social_icon03.png"></a>
+            </div>
+        </nav>
+
+        <div id="container">
+            <!-- hero section -->
+            <section id="hero">
+
+                <div id="hero_con">
+
+                    <!-- about -->
+                    <div>
+                        <p class="case"><span></span>Conceptual Case Study</p>
+                        <h1>Designing a Seamless Bus Experience</h1>
+                        <p class="cate">Category : UX/ UI Design</p>
+                        <p class="desc">This conceptual project explores how user-centered design can improve public bus
+                            experiences. Through contextual research, I identified key accessibility challenges and
+                            designed solutions that enable a smoother, more inclusive journey for all riders — including
+                            tourists, seniors, and people with disabilities.</p>
+                        <p class="role">
+                            <span>My role</span>
+                            <br>
+                            UX Designer / Researcher
+                        </p>
+                    </div>
+
+                    <!-- main image -->
+                    <div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="overview">
+
+                <!-- section tit -->
+                <h2>Overview</h2>
+
+                <!-- ▼▼▼ overview from here ▼▼▼-->
+                <div class="overview">
+
+                    <!-- context -->
+                    <div class="over_con">
+                        <h3>CONTEXT</h3>
+                        <div class="project_img"></div>
+                        <span class="line"></span>
+                        <h4 class="project_tit">Improving Accessibility in Public Transit</h4>
+                        <p>
+                            Many bus systems lack inclusivity. In Vancouver, we observed issues like unclear signage and
+                            announcements. This led to a redesign focused on improving accessibility for diverse users.
+                        </p>
+                    </div>
+
+                    <!-- goal -->
+                    <div class="over_con">
+                        <h3>GOAL</h3>
+                        <div class="project_img"></div>
+                        <span class="line"></span>
+                        <h4 class="project_tit">A More Inclusive & Seamless Bus Journey</h4>
+                        <p>
+                            Our goal was to design a user-centered solution that makes riding the bus easier for all. We
+                            prototyped mobile and in-bus tools to support various user needs.
+                        </p>
+                    </div>
+
+                    <!-- target -->
+                    <div class="over_con">
+                        <h3>TARGET</h3>
+                        <div class="project_img"></div>
+                        <span class="line"></span>
+                        <h4 class="project_tit line_1">Diverse Transit Riders</h4>
+                        <p>
+                            The design focuses on older adults, international visitors, and users with impairments. By
+                            testing with real people, we aimed to make the system intuitive and inclusive.
+                        </p>
+                    </div>
+
+
+                </div>
+
+            </section>
+
+            <section id="design">
+                <h2>Design Process</h2>
+
+                <div id="process">
+
+                    <!-- 1st Process -->
+                    <div id="design01" class="design_con">
+
+                        <!-- process headline -->
+                        <h3>Hypothesis</h3>
+                        <p>Before conducting detailed research, I formulated the following hypotheses based on my
+                            previous experience in Japan.</p>
+
+                    </div>
+
+                    <!-- border -->
+                    <span class="line"></span>
+
+                    <!-- 2nd Process -->
+                    <div id="design02" class="design_con">
+
+                        <!-- process headline -->
+                        <h3>Research</h3>
+                        <h4><span></span>Contextual Inquiry</h4>
+                        <p>
+                            Before conducting detailed research, I formulated the following hypotheses based on my
+                            previous experience in Japan.
+                        </p>
+
+                        <!-- img -->
+                        <div class="process_img">
+                            <img src="images/page01_image01.png">
+                            <img src="images/page01_image02.png">
+                        </div>
+                        <!-- caption -->
+                        <p class="cap">
+                            Conducted on May 27, 2025
+                        </p>
+
+                        <h4><span></span>I focused on following key aspects:</h4>
+                        <p>
+                            • Waiting time at the bus stop<br>
+                            • Boarding behavior<br>
+                            • Passenger activities during the ride<br>
+                            • Actions taken when getting off the bus
+                        </p>
+
+                        <!-- img -->
+                        <div class="process_img">
+                            <img src="images/page01_image03.png">
+                            <img src="images/page01_image04.png">
+                        </div>
+
+                        <h4><span></span>Key insights include from my observation</h4>
+                        <p>
+                            • Buses often do not arrive according to the scheduled timetable.<br>
+                            • The Compass Card tap process causes slight delays.<br>
+                            • Very few passengers use cash for fare payment.<br>
+                            • The LED displays inside the bus are hard to read.<br>
+                            • Announcements are difficult to hear clearly.<br>
+                            • <span class="narrow">During crowded times, passengers have difficulty reaching the stop
+                                buttons.</span>
+                        </p>
+
+                    </div>
+
+                    <!-- border -->
+                    <span class="line"></span>
+
+                    <!-- 3rd Process -->
+                    <div id="design03" class="design_con">
+
+                        <!-- process headline -->
+                        <h3>Steakholder Mapping</h3>
+                        <p>
+                            When exploring challenges and potential solutions, it is essential to understand the
+                            perspectives and levels of interest of all stakeholders. To support this, I created the
+                            stakeholder map (Power-Interest Matrix) shown below, classifying key stakeholders based on
+                            their level of power and interest.
+                        </p>
+
+                        <!-- img -->
+                        <div class="process_img nocap">
+                            <img src="images/page01_image01.png">
+                            <img src="images/page01_image02.png">
+                        </div>
+
+                        <p>
+                            Our goal was to design a user-centered solution that makes riding the bus easier for all. We
+                            prototyped mobile and in-bus tools to support various user needs.
+                        </p>
+                    </div>
+
+                    <!-- border -->
+                    <span class="line"></span>
+
+                    <!-- 4th Process -->
+                    <div id="design04" class="design_con">
+
+                        <!-- process headline -->
+                        <h3>Solution (1/2)</h3>
+                        <h4 class="bold">Contextual Inquiry</h4>
+                        <p>
+                            Proposed a smart app to support each step of the bus journey.
+                        </p>
+
+                        <!-- img -->
+                        <div class="process_img nocap">
+                            <img src="images/page01_image01.png">
+                            <img src="images/page01_image02.png">
+                        </div>
+
+                        <h4><span></span>Why a wearable device?</h4>
+                        <p>
+                            • Usable even when both hands are full<br>
+                            • Compact and easy to carry<br>
+                            • Intuitive for anyone to operate<br>
+                            • Delivers a smart, stress-free experience
+                        </p>
+
+                        <!-- img -->
+                        <div class="process_img nocap">
+                            <img src="images/page01_image01.png">
+                            <img src="images/page01_image02.png">
+                        </div>
+
+                        <h4><span></span>Key Features:</h4>
+
+                        <div class="design_flex">
+                            <ul>
+                                <li>• At the bus stop:</li>
+                                <li>• When boarding:</li>
+                                <li>• When getting off:</li>
+                            </ul>
+
+                            <ul>
+                                <li>Check real-time arrival times and crowd levels</li>
+                                <li>Tap-free payment using an in-app Compass Card</li>
+                                <li>Request a stop directly in the app without pressing a physical button</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <!-- border -->
+                    <span class="line"></span>
+
+                    <!-- 5th Process -->
+                    <div id="design05" class="design_con">
+
+                        <!-- process headline -->
+                        <h3>Solution (2/2)</h3>
+                        <h4 class="bold">Digital Display</h4>
+                        <p>
+                            A clear digital display inside the bus shows real-time stop information and estimated
+                            arrival times
+                        </p>
+
+                        <!-- img -->
+                        <div class="process_img nocap">
+                            <img src="images/page01_image01.png">
+                            <img src="images/page01_image02.png">
+                        </div>
+
+                        <p>
+                            Our goal was to design a user-centered solution that makes riding the bus easier for all. We
+                            prototyped mobile and in-bus tools to support various user needs.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+
+
+        </div>
+
+        <footer>
+            ©︎ 2025 WATARU OGATA
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
