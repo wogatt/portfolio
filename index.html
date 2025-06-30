@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Inter font from Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wataru Ogata Portfolio</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        #wrapper {
+            width: 100%;
+            min-width: 1200px;
+        }
+
+        header,
+        section,
+        footer {
+            margin: auto;
+        }
+
+        nav {
+            background: #000;
+            color: #fff;
+            height: 60px;
+            padding: 0px 15px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            min-width: 1020px;
+            position: fixed;
+            top: 0;
+            z-index: 99;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        nav #logo {
+            width: 200px;
+            white-space: nowrap;
+            font-size: 20px;
+            font-weight: normal;
+        }
+
+        #nav_box {
+            width: 100%;
+            position: relative;
+            margin: auto;
+            height: 60px;
+        }
+
+        /* navigation */
+        #nav {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 400px;
+            display: flex;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        #nav a {
+            text-align: center;
+            line-height: 60px;
+        }
+
+        #nav a:first-child {
+            width: 80px;
+        }
+
+        #nav a:nth-child(2) {
+            width: 86px;
+        }
+
+        /* social media icon */
+        #social {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        #social a {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            background: #fff;
+        }
+
+        #social a:nth-child(1) {
+            background: #fff;
+        }
+
+        #social a:nth-child(2) {
+            background: #fff;
+        }
+
+        #social a:nth-child(3) {
+            background: #fff;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin: 0;
+        }
+
+        #hero {
+            margin-top: 60px;
+        }
+
+        #hero_con {
+            width: 1020px;
+            height: 430px;
+            display: flex;
+            position: relative;
+            margin: auto;
+            justify-content: space-between;
+            gap: 17px;
+            margin-top: -80px;
+        }
+
+        #hero_con div:first-child,
+        #hero_con div:last-child {
+            width: 310px;
+            height: auto;
+            position: relative;
+            bottom: 0;
+            padding-top: 120px;
+        }
+
+        #hero_con div:nth-child(2) {
+            width: 380px;
+            height: 100%;
+            background: #333;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        /* PORTFOLIO */
+        #hero h1#tit {
+            font-size: 180px;
+            line-height: 1;
+            color: rgba(0, 0, 0, 0.1);
+            font-weight: 900;
+            margin: -25px 0 0 0;
+            position: relative;
+            letter-spacing: -0.1px;
+            text-align: center;
+            z-index: 2;
+        }
+
+        /* WATARU OGATA */
+        #hero_con div:first-child h1 {
+            font-size: 60px;
+            line-height: 1;
+            color: #FF9201;
+            font-weight: 900;
+        }
+
+        /* UX UI WEB Design */
+        #hero_con div:first-child p {
+            font-size: 30px;
+            line-height: 1.3;
+            font-weight: normal;
+            margin-top: 50px;
+        }
+
+
+        /* hero sentence */
+        #hero_con div:last-child p {
+            font-size: 18px;
+            line-height: 1.3;
+            font-weight: 400;
+            padding-left: 30px;
+            text-align: justify;
+            margin: 0;
+        }
+
+        .projects,
+        .skills,
+        .experience {
+            display: grid;
+            gap: 50px 30px;
+        }
+
+
+        .projects {
+            position: relative;
+            width: 1020px;
+            height: auto;
+            margin: 45px auto;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        #work {
+            position: relative;
+            width: 100%;
+            background: #f1f1f1;
+            padding: 50px 0;
+        }
+
+        #work h2 {
+            text-align: center;
+            position: relative;
+            width: 100%;
+            font-size: 28px;
+            font-weight: 400;
+        }
+
+        .project_link {
+            width: 320px;
+            height: auto;
+            min-height: 468px;
+            text-align: center;
+        }
+
+        .project_link .project_img {
+            width: 320px;
+            height: 320px;
+            text-align: center;
+        }
+
+        .project_link .project_img img {
+            display: inline-block;
+            position: relative;
+            width: auto;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project_link h3.project_tit {
+            font-size: 22px;
+            line-height: 1.2;
+            padding: 10px 0;
+        }
+
+        .project_link span.line {
+            display: block;
+            position: relative;
+            margin: auto;
+            width: 50px;
+            height: 4px;
+            background: #FF9201;
+        }
+
+        .project_link p {
+            padding: 10px 0;
+            color: #8a8a8a;
+        }
+
+        .project_link p.case {
+            font-size: 14px;
+            color: #000;
+        }
+
+        /* about */
+        #about {
+            position: relative;
+            text-align: center;
+            width: 100%;
+            height: auto;
+        }
+
+        #about .about_con {
+            width: 1020px;
+            height: auto;
+            position: relative;
+            margin: 90px auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #about .about_con h1 {
+            width: 100%;
+            font-size: 180px;
+            line-height: 1;
+            color: rgba(0, 0, 0, 0.1);
+            font-weight: 900;
+            text-align: left;
+            margin-top: -24px;
+        }
+
+        #about .about_con h2 {
+            width: 100%;
+            text-align: center;
+            font-size: 50px;
+        }
+
+        #about .about_con#bio {
+            margin-top: 0px;
+        }
+
+        #about .about_con#bio .my_image {
+            width: 511px;
+            height: 414px;
+            background: #eee;
+        }
+
+        #about .about_con#bio .bio_right {
+            width: 440px;
+            height: auto;
+            text-align: left;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        #about .about_con#bio .bio_right p:first-child {
+            font-size: 40px;
+        }
+
+        #about .about_con#bio .bio_right p:first-child strong {
+            font-size: 52px;
+        }
+
+        #about .about_con#bio .bio_right p:nth-child(2) {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        /* skill */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .skills .skills_con {
+            width: 320px;
+            height: auto;
+        }
+
+        .skills .skills_con .skill_img {
+            height: 200px;
+            background: #eee;
+        }
+
+        .skills .skills_con h3 {
+            font-size: 22px;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .skills .skills_con span.line {
+            display: block;
+            position: relative;
+            margin: auto;
+            width: 50px;
+            height: 4px;
+            background: #FF9201;
+        }
+
+        .skills .skills_con p {
+            text-align: left;
+            margin: 20px 0 0 0;
+        }
+
+        #tools .tools_box {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 30px auto;
+            width: 100%;
+        }
+
+        #tools .tools_box div {
+            width: 113px;
+            height: 113px;
+            line-height: 113px;
+        }
+
+        #experience .ex_box {
+            width: 1020px;
+            position: relative;
+            margin: 30px auto 0;
+            text-align: left;
+        }
+
+        #experience .ex_box .experience {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto 15px;
+        }
+
+        #experience .ex_box .experience .ex_left,
+        #experience .ex_box .experience .detail {
+            position: relative;
+            width: 380px;
+        }
+
+        #experience .ex_box .experience .detail p {
+            padding-bottom: 30px;
+        }
+
+        #experience .ex_box .experience h3 {
+            font-size: 30px;
+            line-height: 1.2;
+            padding: 5px 0;
+        }
+
+        #experience .ex_box .experience .border {
+            position: absolute;
+            width: 240px;
+            height: 100%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            text-align: center;
+        }
+
+        #experience .ex_box .experience .border .circle {
+            width: 68px;
+            height: 68px;
+            background: #eee;
+            position: relative;
+            margin: auto;
+        }
+
+        #experience .ex_box .experience .border .virtical {
+            width: 5px;
+            height: calc(100% - 75px);
+            background: #eee;
+            position: relative;
+            margin: 5px auto 0;
+        }
+
+        /* contact */
+        #contact {
+            padding: 50px 0;
+            width: 100%;
+            text-align: center;
+            background: #919191;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        #contact h2 {
+            font-size: 110px;
+            line-height: 110px;
+            height: auto;
+            margin: 10px auto;
+        }
+
+        #contact p {
+            font-size: 30px;
+        }
+
+        footer {
+            background: #000;
+            text-align: center;
+            font-size: 18px;
+            line-height: 45px;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .email-button {
+            display: inline-block;
+            background: orange;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 60px;
+            text-decoration: none;
+            margin-top: 20px;
+            width: 600px;
+            font-size: 30px;
+            line-height: 60px;
+            border: solid 2px #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <nav>
+            <div id="logo">WATARU OGATA</div>
+
+            <div id="nav_box">
+                <!-- navigation -->
+                <div id="nav">
+                    <a href="#work">WORK</a>
+                    <a href="#about">ABOUT</a>
+                    <a href="#contact">CONTACT</a>
+                </div>
+            </div>
+
+            <!-- social media -->
+            <div id="social">
+                <a href="#social01"><img src="images/social_icon01.png"></a>
+                <a href="#social02"><img src="images/social_icon02.png"></a>
+                <a href="#social03"><img src="images/social_icon03.png"></a>
+            </div>
+        </nav>
+
+        <div id="container">
+            <!-- hero section -->
+            <section id="hero">
+                <h1 id="tit">PORTFOLIO</h1>
+                <div id="hero_con">
+                    <div>
+                        <h1>WATARU<br>OGATA</h1>
+                        <p>UX/UI Design<br />Web Design</p>
+                    </div>
+                    <div id="hero_img"></div>
+                    <div>
+                        <p>I’ve been working in Web and UX design since 2020. From bold, vibrant designs to subtle,
+                            refined
+                            expressions,<br>I strive to create simple yet powerful designs that reflect my personal
+                            style.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="work">
+                <!-- section tit -->
+                <h2>FEATURE PROJECTS</h2>
+
+                <!-- ▼▼▼ projects from here ▼▼▼-->
+                <div class="projects">
+
+                    <!-- 1st project -->
+                    <div class="project_link">
+                        <!-- Thumnail -->
+                        <div class="project_img">
+                            <img src="images/thumnail01.png">
+                        </div>
+                        <p class="case">Conceptual Case Study</p>
+                        <span class="line"></span>
+                        <h3 class="project_tit">Designing a Seamless<br>Bus Experience</h3>
+                        <p>UX / UI Design</p>
+                    </div>
+
+                    <!-- 2nd project -->
+                    <div class="project_link">
+                        <!-- Thumnail -->
+                        <div class="project_img">
+                            <img src="images/thumnail01.png">
+                        </div>
+                        <p class="case">Conceptual Case Study</p>
+                        <span class="line"></span>
+                        <h3 class="project_tit">A gamified approach<br>to digital detox</h3>
+                        <p>UX / UI Design</p>
+                    </div>
+
+                    <!-- 3rd project -->
+                    <div class="project_link">
+                        <!-- Thumnail -->
+                        <div class="project_img">
+                            <img src="images/thumnail01.png">
+                        </div>
+                        <p class="case">Conceptual Case Study</p>
+                        <span class="line"></span>
+                        <h3 class="project_tit">Redesigning a movie<br>information website</h3>
+                        <p>UX / UI Design</p>
+                    </div>
+
+                    <!-- 4th project -->
+                    <div class="project_link">
+                        <!-- Thumnail -->
+                        <div class="project_img">
+                            <img src="images/thumnail01.png">
+                        </div>
+                        <p class="case">Real Project</p>
+                        <span class="line"></span>
+                        <h3 class="project_tit">Designing Web & Visuals for<br>Japan’s Boatrace Content</h3>
+                        <p>Web Design</p>
+                    </div>
+
+                    <!-- 5th project -->
+                    <div class="project_link">
+                        <div class="project_img">
+                            <img src="images/thumnail01.png">
+                        </div>
+                        <p class="case">Real Project</p>
+                        <span class="line"></span>
+                        <h3 class="project_tit">Flyer design for a business<br>startup experience session</h3>
+                        <p>Graphic Design</p>
+                    </div>
+
+                    <!-- 6th project -->
+                    <div class="project_link">
+                        <div class="project_img">
+                            <img src="images/thumnail01.png">
+                        </div>
+                        <p class="case">Real Project</p>
+                        <span class="line"></span>
+                        <h3 class="project_tit">Corporate logo for<br>a career support service</h3>
+                        <p>Logo Design</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section id="about">
+
+                <div id="bio" class="about_con">
+                    <h1>ABOUT</h1>
+                    <div class="my_image"></div>
+                    <div class="bio_right">
+                        <p>My name is<br><strong>WATARU OGATA</strong></p>
+                        <p>
+                            I’ve been working in Web and UX design since 2020.
+                            From bold, vibrant designs to subtle, refined expressions,
+                            I strive to create simple yet powerful designs that reflect my personal style.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="skills" class="about_con">
+                    <h2>Skills</h2>
+
+                    <div class="skills">
+
+                        <!-- UX UI Design -->
+                        <div class="skills_con">
+                            <div class="skill_img"></div>
+                            <h3>UX UI Design</h3>
+                            <span class="line"></span>
+                            <p>I create intuitive and accessible digital experiences through user research, prototyping,
+                                and
+                                testing. My focus is on solving real problems with clear and consistent interface
+                                design.
+                            </p>
+                        </div>
+
+                        <!-- Graphic Design -->
+                        <div class="skills_con">
+                            <div class="skill_img"></div>
+                            <h3>Graphic Design</h3>
+                            <span class="line"></span>
+                            <p>From branding to layout, I design visuals that are clean, impactful, and aligned with
+                                each
+                                project’s goals. I enjoy turning ideas into compelling visuals.</p>
+                        </div>
+
+                        <!-- Coding -->
+                        <div class="skills_con">
+                            <div class="skill_img"></div>
+                            <h3>Coding</h3>
+                            <span class="line"></span>
+                            <p>I bring designs to life using HTML, CSS, and basic JavaScript. My goal is to ensure
+                                smooth
+                                user
+                                interaction while bridging design and development.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="tools" class="about_con">
+                    <h2>Creative Tools</h2>
+                    <div class="tools_box">
+                        <div><img src="images/tools_01.png"></div>
+                        <div><img src="images/tools_02.png"></div>
+                        <div><img src="images/tools_03.png"></div>
+                        <div><img src="images/tools_04.png"></div>
+                        <div><img src="images/tools_05.png"></div>
+                        <div><img src="images/tools_06.png"></div>
+                        <div><img src="images/tools_07.png"></div>
+                    </div>
+                </div>
+
+                <div id="experience" class="about_con">
+                    <h2>Experience</h2>
+
+                    <div class="ex_box">
+
+                        <!-- 1st Experience -->
+                        <div class="experience">
+                            <div class="ex_left">
+                                <h3>Tamwood Careers</h3>
+                                <p class="when">Sep 2024 – Jul 2025</p>
+                            </div>
+                            <div class="border">
+                                <div class="circle"></div>
+                                <div class="virtical"></div>
+                            </div>
+                            <div class="detail">
+                                <h3>
+                                    UX Designer Student
+                                </h3>
+                                <p>
+                                    I’m currently studying UX and UI design in Vancouver, focusing on user research,
+                                    wireframing, and prototyping. Through hands-on projects and teamwork, I’ve learned
+                                    how to approach problems from a user-centered perspective and iterate based on
+                                    feedback. This experience has helped me sharpen both my technical and communication
+                                    skills in an international environment.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 2nd Experience -->
+                        <div class="experience">
+                            <div class="ex_left">
+                                <h3>Tamwood Careers</h3>
+                                <p class="when">Sep 2024 – Jul 2025</p>
+                            </div>
+                            <div class="border">
+                                <div class="circle"></div>
+                                <div class="virtical"></div>
+                            </div>
+                            <div class="detail">
+                                <h3>
+                                    Web Designer / Coder
+                                </h3>
+                                <p>
+                                    I worked as a web designer and coder for four years. I designed and developed
+                                    websites and banners mainly for the entertainment industry, ensuring visual
+                                    consistency and usability. I collaborated closely with clients and team members,
+                                    balancing creative ideas with business needs. This role strengthened my skills in
+                                    both graphic design and front-end development.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 3rd Experience -->
+                        <div class="experience">
+                            <div class="ex_left">
+                                <h3>Tamwood Careers</h3>
+                                <p class="when">Sep 2024 – Jul 2025</p>
+                            </div>
+                            <div class="border">
+                                <div class="circle"></div>
+                                <div class="virtical"></div>
+                            </div>
+                            <div class="detail">
+                                <h3>
+                                    Graphic and Interaction<br>Design Graduate
+                                </h3>
+                                <p>
+                                    I studied graphic and interaction design, gaining a strong foundation in visual
+                                    communication, layout, and user interface design. I worked on various school
+                                    projects, exploring both print and digital media. This academic experience shaped my
+                                    design thinking and introduced me to user experience principles, which later became
+                                    the core of my design career.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+
+        <!-- contact -->
+        <section id="contact">
+            <p>I appreciate your time. </p>
+            <h2>CONTACT</h2>
+            <p>Feel free to reach out via the email address below.</p>
+            <a class="email-button" href="mailto:wataru0725tail@gmail.com">wataru0725tail@gmail.com</a>
+        </section>
+
+        <footer>
+            ©︎ 2025 WATARU OGATA
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
