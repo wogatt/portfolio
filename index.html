@@ -10,7 +10,7 @@
 
     <title>Wataru Ogata Portfolio</title>
     <style>
-        html{
+        html {
             scroll-behavior: smooth;
         }
 
@@ -208,6 +208,10 @@
             gap: 50px 30px;
         }
 
+        .scroll_target {
+            scroll-margin-top: 60px;
+            /* 固定メニューの高さに合わせて調整 */
+        }
 
         .projects {
             position: relative;
@@ -520,7 +524,7 @@
 
         <div id="container">
             <!-- hero section -->
-            <section id="hero">
+            <section id="hero" class="scroll_target">
                 <h1 id="tit">PORTFOLIO</h1>
                 <div id="hero_con">
                     <div>
@@ -538,7 +542,7 @@
                 </div>
             </section>
 
-            <section id="work">
+            <section id="work" class="scroll_target">
                 <!-- section tit -->
                 <h2>FEATURE PROJECTS</h2>
 
@@ -619,7 +623,7 @@
 
             </section>
 
-            <section id="about">
+            <section id="about"  class="scroll_target">
 
                 <div id="bio" class="about_con">
                     <h1>ABOUT</h1>
