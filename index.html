@@ -21,6 +21,31 @@
             color: #333;
         }
 
+        #back-to-top {
+            width: 45px;
+            height: 45px;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 10px 16px;
+            font-size: 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 999;
+        }
+
+        #back-to-top.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+
         #wrapper {
             width: 100%;
             min-width: 1200px;
@@ -133,7 +158,7 @@
 
         #hero_con {
             width: 1020px;
-            height: 430px;
+            height: 380px;
             display: flex;
             position: relative;
             margin: auto;
@@ -148,17 +173,34 @@
             height: auto;
             position: relative;
             bottom: 0;
-            padding-top: 120px;
+            padding-top: 105px;
         }
 
-        #hero_con div:nth-child(2) {
+        #hero_con div:nth-child(2)::after {
+            display: block;
+            content: "";
             width: 380px;
             height: 100%;
-            background: #333;
+            background: url(images/myimage.png) no-repeat top -10px center / auto 120%;
             position: absolute;
             left: 0;
             right: 0;
             margin: auto;
+            z-index: 3;
+        }
+
+        #hero_con div:nth-child(2)::before {
+            content: "";
+            display: block;
+            width: 300px;
+            height: 300px;
+            background: #FF9201;
+            border-radius: 150px;
+            position: absolute;
+            z-index: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -40%);
         }
 
         /* PORTFOLIO */
@@ -174,6 +216,20 @@
             z-index: 2;
         }
 
+        #hero h1#tit#tit span {
+            opacity: 0;
+            display: inline-block;
+            transform: translateY(20px);
+            animation: riseUp 0.5s forwards ease-out;
+        }
+
+        @keyframes riseUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* WATARU OGATA */
         #hero_con div:first-child h1 {
             font-size: 60px;
@@ -187,7 +243,7 @@
             font-size: 30px;
             line-height: 1.3;
             font-weight: normal;
-            margin-top: 50px;
+            margin-top: 30px;
         }
 
 
@@ -243,10 +299,16 @@
             text-align: center;
         }
 
+        .project_link a {
+            text-decoration: none;
+        }
+
         .project_link .project_img {
+            display: inline-block;
             width: 320px;
             height: 320px;
             text-align: center;
+            position: relative;
         }
 
         .project_link .project_img img {
@@ -257,10 +319,41 @@
             object-fit: cover;
         }
 
+        .project_link:first-child .project_img {
+            background: url(images/thumnail01.png) center center / auto 100% no-repeat;
+            width: 220px;
+        }
+
+        .project_link:nth-child(2) .project_img {
+            background: url(images/thumnail01.png) center center / auto 100% no-repeat;
+        }
+
+        .project_link:nth-child(3) .project_img {
+            background: url(images/thumnail01.png) center center / auto 100% no-repeat;
+        }
+
+        .project_link:nth-child(4) .project_img {
+            background: url(images/thumnail01.png) center center / auto 100% no-repeat;
+        }
+
+        .project_link:nth-child(5) .project_img {
+            background: url(images/thumnail01.png) center center / auto 100% no-repeat;
+        }
+
+        .project_link:nth-child(6) .project_img {
+            background: url(images/thumnail01.png) center center / auto 100% no-repeat;
+        }
+
+        .project_link:hover .project_img {
+            transition: all 0.5s;
+            background-size: auto 105%;
+        }
+
         .project_link h3.project_tit {
             font-size: 22px;
             line-height: 1.2;
             padding: 10px 0;
+            color: #000;
         }
 
         .project_link span.line {
@@ -322,7 +415,7 @@
         #about .about_con#bio .my_image {
             width: 511px;
             height: 414px;
-            background: #eee;
+            background: url(images/my_photo.png) no-repeat top -50px center /auto auto;
         }
 
         #about .about_con#bio .bio_right {
@@ -522,6 +615,8 @@
             </div>
         </nav>
 
+        <button id="back-to-top">↑</button>
+
         <div id="container">
             <!-- hero section -->
             <section id="hero" class="scroll_target">
@@ -552,21 +647,20 @@
                     <!-- 1st project -->
                     <div class="project_link">
                         <!-- Thumnail -->
-                        <div class="project_img">
-                            <img src="images/thumnail01.png">
-                        </div>
-                        <p class="case">Conceptual Case Study</p>
-                        <span class="line"></span>
-                        <h3 class="project_tit">Designing a Seamless<br>Bus Experience</h3>
-                        <p>UX / UI Design</p>
+                        <a href="page01/index.html">
+                            <div class="project_img"></div>
+                            <p class="case">Conceptual Case Study</p>
+                            <span class="line"></span>
+                            <h3 class="project_tit">Designing a Seamless<br>Bus Experience</h3>
+                            <p>UX / UI Design</p>
+                        </a>
+
                     </div>
 
                     <!-- 2nd project -->
                     <div class="project_link">
                         <!-- Thumnail -->
-                        <div class="project_img">
-                            <img src="images/thumnail01.png">
-                        </div>
+                        <div class="project_img"></div>
                         <p class="case">Conceptual Case Study</p>
                         <span class="line"></span>
                         <h3 class="project_tit">A gamified approach<br>to digital detox</h3>
@@ -576,9 +670,7 @@
                     <!-- 3rd project -->
                     <div class="project_link">
                         <!-- Thumnail -->
-                        <div class="project_img">
-                            <img src="images/thumnail01.png">
-                        </div>
+                        <div class="project_img"></div>
                         <p class="case">Conceptual Case Study</p>
                         <span class="line"></span>
                         <h3 class="project_tit">Redesigning a movie<br>information website</h3>
@@ -588,9 +680,7 @@
                     <!-- 4th project -->
                     <div class="project_link">
                         <!-- Thumnail -->
-                        <div class="project_img">
-                            <img src="images/thumnail01.png">
-                        </div>
+                        <div class="project_img"></div>
                         <p class="case">Real Project</p>
                         <span class="line"></span>
                         <h3 class="project_tit">Designing Web & Visuals for<br>Japan’s Boatrace Content</h3>
@@ -599,9 +689,7 @@
 
                     <!-- 5th project -->
                     <div class="project_link">
-                        <div class="project_img">
-                            <img src="images/thumnail01.png">
-                        </div>
+                        <div class="project_img"></div>
                         <p class="case">Real Project</p>
                         <span class="line"></span>
                         <h3 class="project_tit">Flyer design for a business<br>startup experience session</h3>
@@ -610,9 +698,7 @@
 
                     <!-- 6th project -->
                     <div class="project_link">
-                        <div class="project_img">
-                            <img src="images/thumnail01.png">
-                        </div>
+                        <div class="project_img"></div>
                         <p class="case">Real Project</p>
                         <span class="line"></span>
                         <h3 class="project_tit">Corporate logo for<br>a career support service</h3>
@@ -623,7 +709,7 @@
 
             </section>
 
-            <section id="about"  class="scroll_target">
+            <section id="about" class="scroll_target">
 
                 <div id="bio" class="about_con">
                     <h1>ABOUT</h1>
@@ -789,6 +875,44 @@
         </footer>
 
     </div>
+
+    <script>
+        const title = document.getElementById("tit");
+        const text = title.textContent;
+        title.textContent = "";
+
+        const len = text.length;
+
+        for (let i = 0; i < len; i++) {
+            const span = document.createElement("span");
+            span.textContent = text[i];
+
+            // ← 左の文字ほど delay を長くする（逆順）
+            const delay = 0.4 * Math.pow(0.75, len - 1 - i);
+            span.style.animationDelay = `${delay}s`;
+            title.appendChild(span);
+        }
+
+    </script>
+
+    <script>
+        const btn = document.getElementById("back-to-top");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                btn.classList.add("show");
+            } else {
+                btn.classList.remove("show");
+            }
+        });
+
+        btn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
 
 </body>
 
