@@ -867,69 +867,70 @@
         });
     </script>
 
-<script>
-  const navLinks = document.querySelectorAll('.work_navi a');
-  const sections = document.querySelectorAll('[id]');
+    <!-- navi -->
+    <script>
+        const navLinks = document.querySelectorAll('.work_navi a');
+        const sections = document.querySelectorAll('[id]');
 
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.5
-  };
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
 
-        // まず、通常のアクティブ切り替え
-        navLinks.forEach(link => {
-          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                    // まず、通常のアクティブ切り替え
+                    navLinks.forEach(link => {
+                        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
         });
-      }
-    });
-  }, observerOptions);
 
-  sections.forEach(section => {
-    observer.observe(section);
-  });
+        // 初回読み込みで #hero をアクティブに
+        window.addEventListener('DOMContentLoaded', () => {
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === '#hero');
+            });
+        });
 
-  // 初回読み込みで #hero をアクティブに
-  window.addEventListener('DOMContentLoaded', () => {
-    navLinks.forEach(link => {
-      link.classList.toggle('active', link.getAttribute('href') === '#hero');
-    });
-  });
+        // スクロール補正
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
 
-  // スクロール補正
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
+            // 上部補正（Top）
+            if (scrollY <= 100) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#hero') {
+                        link.classList.add('active');
+                    }
+                });
+                return;
+            }
 
-    // 上部補正（Top）
-    if (scrollY <= 100) {
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#hero') {
-          link.classList.add('active');
-        }
-      });
-      return;
-    }
+            // 下部補正（Solution）
+            const scrollBottom = window.innerHeight + scrollY;
+            const documentHeight = document.documentElement.scrollHeight;
 
-    // 下部補正（Solution）
-    const scrollBottom = window.innerHeight + scrollY;
-    const documentHeight = document.documentElement.scrollHeight;
-
-    if (scrollBottom >= documentHeight - 10) {
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#design04') {
-          link.classList.add('active');
-        }
-      });
-    }
-  });
-</script>
+            if (scrollBottom >= documentHeight - 10) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#design04') {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    </script>
 
 
 
