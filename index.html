@@ -540,14 +540,28 @@
             width: 68px;
             height: 68px;
             background: #eee;
+            border-radius: 34px;
             position: relative;
             margin: auto;
         }
 
+        #experience .ex_box .experience .border .circle::after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 34px;
+            height: 34px;
+            background: #FF9201;
+            border-radius: 34px;
+            position: relative;
+            margin: auto;
+            translate: 0 50%;
+        }
+
         #experience .ex_box .experience .border .virtical {
-            width: 5px;
+            width: 2px;
             height: calc(100% - 75px);
-            background: #eee;
+            background: #FF9201;
             position: relative;
             margin: 5px auto 0;
         }
