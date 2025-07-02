@@ -22,6 +22,36 @@
             color: #333;
         }
 
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        /* ローディングアニメーション（例：円） */
+        .loading::before {
+            content: "";
+            width: 40px;
+            height: 40px;
+            border: 5px solid #ccc;
+            border-top-color: #333;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
         #back-to-top {
             width: 45px;
             height: 45px;
@@ -70,7 +100,7 @@
             align-items: center;
             width: 100%;
             min-width: 1020px;
-            position: fixed;
+            position: sticky;
             top: 0;
             z-index: 99;
         }
@@ -135,25 +165,24 @@
             background: #fff;
         }
 
+        /* Linkedin */
         #social a:nth-child(1) {
-            background: #fff;
+            background: url(../images/social_icon01.png) center center/ 100% auto;
+            border: solid 1px #fff;
         }
-
+        /* Wantedly */
         #social a:nth-child(2) {
-            background: #fff;
+            background: url(../images/social_icon02.png) center top 11px / auto 50% #fff no-repeat;
+            border: solid 1px #fff;
         }
-
+        /* Medium */
         #social a:nth-child(3) {
-            background: #fff;
+            background: url(../images/social_icon03.png) center center/ 100% auto;
+            border: solid 1px #fff;
         }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        ul,
-        li,
-        p {
+        h1,h2,h3,h4,ul,li,p
+        {
             margin: 0;
         }
 
@@ -240,7 +269,7 @@
             height: 510px;
             display: flex;
             position: relative;
-            margin: 135px auto 60px;
+            margin: 75px auto 60px;
             justify-content: space-between;
             gap: 0px;
         }
@@ -373,9 +402,11 @@
         .over_con:first-child .project_img {
             background: url(../images/overview01.svg) no-repeat center left 52% / auto 80%;
         }
+
         .over_con:nth-child(2) .project_img {
             background: url(../images/overview02.svg) no-repeat top 9px left 53% / auto 85%;
         }
+
         .over_con:nth-child(3) .project_img {
             background: url(../images/overview03.svg) no-repeat top 15px center / auto 80%;
         }
@@ -504,6 +535,16 @@
             margin-bottom: 40px;
         }
 
+        #design .design_con .process_img img.design_img01 {
+            width: 640px;
+            height: auto;
+        }
+
+        #design .design_con .process_img img.design_img02 {
+            width: auto;
+            height: 310px;
+        }
+
         #design .design_con p.cap {
             width: 640px;
             position: relative;
@@ -561,6 +602,10 @@
 <body>
 
     <div id="wrapper" class="page">
+
+        <!-- loading -->
+        <div class="loading"></div>
+
         <nav>
             <div id="logo"><a href="../index.html">WATARU OGATA</a></div>
 
@@ -577,9 +622,9 @@
 
             <!-- social media -->
             <div id="social">
-                <a href="#social01"><img src="../images/social_icon01.png"></a>
-                <a href="#social02"><img src="../images/social_icon02.png"></a>
-                <a href="#social03"><img src="../images/social_icon03.png"></a>
+                <a href="#social01"></a>
+                <a href="#social02"></a>
+                <a href="#social03"></a>
             </div>
         </nav>
 
@@ -759,8 +804,7 @@
 
                         <!-- img -->
                         <div class="process_img nocap">
-                            <img src="../images/page01_image01.png">
-                            <img src="../images/page01_image02.png">
+                            <img class="design_img02" src="../images/page01_mapping.png">
                         </div>
 
                         <p>
@@ -777,15 +821,14 @@
 
                         <!-- process headline -->
                         <h3>Solution (1/2)</h3>
-                        <h4 class="bold">Contextual Inquiry</h4>
+                        <h4 class="bold">Wearable Device</h4>
                         <p>
                             Proposed a smart app to support each step of the bus journey.
                         </p>
 
                         <!-- img -->
                         <div class="process_img nocap">
-                            <img src="../images/page01_image01.png">
-                            <img src="../images/page01_image02.png">
+                            <img class="design_img01" src="../images/page01_image05.png">
                         </div>
 
                         <h4><span></span>Why a wearable device?</h4>
@@ -798,8 +841,7 @@
 
                         <!-- img -->
                         <div class="process_img nocap">
-                            <img src="../images/page01_image01.png">
-                            <img src="../images/page01_image02.png">
+                            <img class="design_img02" src="../images/page01_image06.png">
                         </div>
 
                         <h4><span></span>Key Features:</h4>
@@ -836,8 +878,7 @@
 
                         <!-- img -->
                         <div class="process_img nocap">
-                            <img src="../images/page01_image01.png">
-                            <img src="../images/page01_image02.png">
+                            <img class="design_img01" src="../images/page01_image07.png">
                         </div>
 
                         <p>
@@ -897,8 +938,6 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const id = entry.target.getAttribute('id');
-
-                    // まず、通常のアクティブ切り替え
                     navLinks.forEach(link => {
                         link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
                     });
@@ -906,9 +945,7 @@
             });
         }, observerOptions);
 
-        sections.forEach(section => {
-            observer.observe(section);
-        });
+        sections.forEach(section => observer.observe(section));
 
         // 初回読み込みで #hero をアクティブに
         window.addEventListener('DOMContentLoaded', () => {
@@ -945,9 +982,28 @@
                 });
             }
         });
+
+        // 🔽 クリック時にも .active を適用
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
     </script>
 
-
+    <script>
+        window.addEventListener('load', () => {
+            const loading = document.querySelector('.loading');
+            if (loading) {
+                loading.style.opacity = '0';
+                loading.style.pointerEvents = 'none';
+                setTimeout(() => {
+                    loading.style.display = 'none';
+                }, 500); // フェードアウトの時間に合わせる
+            }
+        });
+    </script>
 
 </body>
 
