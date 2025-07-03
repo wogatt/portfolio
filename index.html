@@ -63,6 +63,8 @@
         #hero_con div:nth-child(2) {
             width: 380px;
             height: 380px;
+            position: relative;
+            z-index: 2;
         }
 
         #hero_con div:nth-child(2)::after {
@@ -639,7 +641,7 @@
                         <h1>WATARU<br>OGATA</h1>
                         <p>UX/UI Design<br />Web Design</p>
                     </div>
-                    <div id="hero_img inview"></div>
+                    <div id="hero_img" class="inview"></div>
                     <div class="inview sf">
                         <p>
                             I’ve been working in <strong>Web and UX design</strong> since <strong>2020</strong>.<br>
@@ -902,26 +904,8 @@
 
     </div>
 
-    <script>
-        const title = document.getElementById("tit");
-        const text = title.textContent;
-        title.textContent = "";
-
-        const len = text.length;
-
-        for (let i = 0; i < len; i++) {
-            const span = document.createElement("span");
-            span.textContent = text[i];
-
-            // ← 左の文字ほど delay を長くする（逆順）
-            const delay = 0.4 * Math.pow(0.75, len - 1 - i);
-            span.style.animationDelay = `${delay}s`;
-            title.appendChild(span);
-        }
-
-    </script>
-
     <script src="js/common.js"></script>
+
 
 
 
