@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Inter font from Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex,nofollow,noarchive" />
 
+    <!-- Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
     <title>Wataru Ogata Portfolio</title>
+
     <style>
         html {
             scroll-behavior: smooth;
@@ -34,7 +37,7 @@
             z-index: 9999;
         }
 
-        /* ローディングアニメーション（例：円） */
+        /* lading */
         .loading::before {
             content: "";
             width: 40px;
@@ -233,6 +236,12 @@
             position: relative;
             bottom: 0;
             padding-top: 105px;
+        }
+
+        #hero_con div:first-child.inview,
+        #hero_con div:last-child.inview {
+            transition: all 0.6s ease-out;
+            transition-delay: 0.3s;
         }
 
         #hero_con div:nth-child(2)::after {
@@ -742,7 +751,7 @@
             padding: 50px 0;
             width: 100%;
             text-align: center;
-            background: #919191;
+            background: #333;
             color: rgba(255, 255, 255, 0.75);
         }
 
@@ -815,12 +824,12 @@
             <section id="hero" class="scroll_target">
                 <h1 id="tit">PORTFOLIO</h1>
                 <div id="hero_con">
-                    <div>
+                    <div class="inview sf">
                         <h1>WATARU<br>OGATA</h1>
                         <p>UX/UI Design<br />Web Design</p>
                     </div>
                     <div id="hero_img"></div>
-                    <div>
+                    <div class="inview sf">
                         <p>I’ve been working in Web and UX design since 2020. From bold, vibrant designs to subtle,
                             refined
                             expressions,<br>I strive to create simple yet powerful designs that reflect my personal
