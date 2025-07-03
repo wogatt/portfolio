@@ -16,20 +16,28 @@ btn.addEventListener("click", () => {
     });
 });
 
-// ローディングアニメーション
+// ローディング完了後に inview を発火
 window.addEventListener("load", () => {
     const loading = document.querySelector(".loading");
+
     if (loading) {
         loading.style.opacity = "0";
         loading.style.pointerEvents = "none";
+
         setTimeout(() => {
             loading.style.display = "none";
-        }, 500); // フェードアウトの時間と合わせる
+
+            // ⬇️ ローディング非表示後にinview処理を開始
+            startInviewObserver();
+        }, 500); // フェードアウト時間に合わせる
+    } else {
+        // ローディングがない場合も inview は動かす
+        startInviewObserver();
     }
 });
 
-// inviewアニメーション
-document.addEventListener("DOMContentLoaded", () => {
+// inviewアニメーションの初期化関数
+function startInviewObserver() {
     const targets = document.querySelectorAll(".inview");
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -44,4 +52,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     targets.forEach(target => observer.observe(target));
-});
+}
