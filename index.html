@@ -387,12 +387,38 @@
             transform-origin: center center;
         }
 
-        .project_link:nth-child(3) .project_img {
-            background: url(images/thumnail01.png) center center / auto 100% no-repeat;
+        .project_link:nth-child(3) .project_img::after {
+            content: "";
+            display: block;
+            background: url(images/thumnail03.png) center center / auto 100% no-repeat;
+            width: 320px;
+            height: 320px;
+            position: relative;
+            margin: auto;
+            filter: drop-shadow(0 0 0 10px #7c7c7c);
         }
 
-        .project_link:nth-child(4) .project_img {
-            background: url(images/thumnail01.png) center center / auto 100% no-repeat;
+        .project_link:nth-child(3):hover .project_img::after {
+            transform: scale(1.05);
+            transition: all 0.5s;
+            transform-origin: center center;
+        }
+
+        /* project6 */
+        .project_link:nth-child(4) .project_img::after {
+            content: "";
+            display: block;
+            background: url(images/thumnail04.png) center center / auto 100% no-repeat rgba(255, 255, 255, 0.75);
+            width: 320px;
+            height: 320px;
+            position: relative;
+            margin: 0px auto;
+        }
+
+        .project_link:nth-child(4):hover .project_img::after {
+            transform: scale(1.05);
+            transition: all 0.5s;
+            transform-origin: center center;
         }
 
         .project_link:nth-child(5) .project_img::after {
@@ -412,8 +438,21 @@
             transform-origin: center center;
         }
 
-        .project_link:nth-child(6) .project_img {
-            background: url(images/thumnail01.png) center center / auto 100% no-repeat;
+        /* project6 */
+        .project_link:nth-child(6) .project_img::after {
+            content: "";
+            display: block;
+            background: url(images/thumnail06.png) center center / auto 100% no-repeat rgba(255, 255, 255, 0.75);
+            width: 320px;
+            height: 320px;
+            position: relative;
+            margin: 0px auto;
+        }
+
+        .project_link:nth-child(6):hover .project_img::after {
+            transform: scale(1.05);
+            transition: all 0.5s;
+            transform-origin: center center;
         }
 
         .project_link:hover .project_img {
