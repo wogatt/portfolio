@@ -678,13 +678,13 @@
                     <!-- 2nd project -->
                     <div class="project_link inview">
                         <!-- Thumnail -->
-                            <div class="project_img">
-                                <span class="view_detail">VIEW DETAIL</span>
-                            </div>
-                            <p class="case">Conceptual Case Study</p>
-                            <span class="line"></span>
-                            <h3 class="project_tit">A gamified approach<br>to digital detox</h3>
-                            <p>UX / UI Design</p>
+                        <div class="project_img">
+                            <span class="view_detail">VIEW DETAIL</span>
+                        </div>
+                        <p class="case">Conceptual Case Study</p>
+                        <span class="line"></span>
+                        <h3 class="project_tit">A gamified approach<br>to digital detox</h3>
+                        <p>UX / UI Design</p>
                     </div>
 
                     <!-- 3rd project -->
@@ -906,8 +906,26 @@
 
     <script src="js/common.js"></script>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const title = document.getElementById("tit");
+            if (!title) return;
 
+            const text = title.textContent;
+            title.textContent = "";
 
+            const len = text.length;
+
+            for (let i = 0; i < len; i++) {
+                const span = document.createElement("span");
+                span.textContent = text[i];
+
+                const delay = 0.4 * Math.pow(0.75, len - 1 - i);
+                span.style.animationDelay = `${delay}s`;
+                title.appendChild(span);
+            }
+        });
+    </script>
 
 </body>
 
