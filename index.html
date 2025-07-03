@@ -81,6 +81,10 @@
             transition: all 0.3s ease-out;
         }
 
+        .inview.sf {
+            transform: translateY(0px);
+        }
+
         .inview.mov {
             opacity: 1;
             transform: translateY(0);
@@ -563,16 +567,22 @@
         }
 
         #about .about_con#bio .bio_right p:first-child {
-            font-size: 40px;
+            font-size: 36px;
+            line-height: 60px;
+            margin-bottom: 15px;
+            color: #FF9201;
         }
 
         #about .about_con#bio .bio_right p:first-child strong {
             font-size: 52px;
+            color: #000;
         }
 
         #about .about_con#bio .bio_right p:nth-child(2) {
             font-size: 18px;
             line-height: 1.5;
+            transition: all 0.6s ease-out;
+            transition-delay: 0.2s;
         }
 
         /* skill */
@@ -591,6 +601,7 @@
         .skills .skills_con:nth-child(2) {
             transition-delay: 0.2s;
         }
+
         .skills .skills_con:nth-child(3) {
             transition-delay: 0.4s;
         }
@@ -655,6 +666,12 @@
             position: relative;
             margin: 30px auto 0;
             text-align: left;
+            translate: transleteY(0px);
+        }
+
+        #experience .ex_box.inview {
+            transition: all 0.5s ease-out;
+            transition-delay: 0.2s;
         }
 
         #experience .ex_box .experience {
@@ -671,7 +688,7 @@
         }
 
         #experience .ex_box .experience .detail p {
-            padding-bottom: 30px;
+            padding-bottom: 24px;
         }
 
         #experience .ex_box .experience h3 {
@@ -893,8 +910,8 @@
                     <h1>ABOUT</h1>
                     <div class="my_image"></div>
                     <div class="bio_right">
-                        <p>My name is<br><strong>WATARU OGATA</strong></p>
-                        <p>
+                        <p class="inview">My name is<br><strong>WATARU OGATA</strong></p>
+                        <p class="inview sf">
                             I’ve been working in Web and UX design since 2020.
                             From bold, vibrant designs to subtle, refined expressions,
                             I strive to create simple yet powerful designs that reflect my personal style.
@@ -945,7 +962,7 @@
 
                 <div id="tools" class="about_con">
                     <h2>Creative Tools</h2>
-                    <div class="tools_box">
+                    <div class="tools_box inview">
                         <div><img src="images/tools_01.png"></div>
                         <div><img src="images/tools_02.png"></div>
                         <div><img src="images/tools_03.png"></div>
@@ -959,7 +976,7 @@
                 <div id="experience" class="about_con">
                     <h2>Experience</h2>
 
-                    <div class="ex_box">
+                    <div class="ex_box inview sf">
 
                         <!-- 1st Experience -->
                         <div class="experience">
