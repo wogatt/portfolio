@@ -76,8 +76,28 @@
             pointer-events: auto;
         }
 
-        .no_margin_top{
-            margin-top: 0!important;
+        #back-to-top.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .inview {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease-out;
+        }
+
+        .inview.sf {
+            transform: translateY(0px);
+        }
+
+        .inview.mov {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .no_margin_top {
+            margin-top: 0 !important;
         }
 
 
