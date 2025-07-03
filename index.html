@@ -369,8 +369,21 @@
             transition: all 0.5s;
             transform-origin: center center;
         }
-        .project_link:nth-child(2) .project_img {
+
+        .project_link:nth-child(2) .project_img::after {
+            content: "";
+            display: block;
             background: url(images/thumnail02.png) center center / auto 100% no-repeat;
+            width: 320px;
+            height: 320px;
+            position: relative;
+            margin: 0px auto;
+        }
+
+        .project_link:nth-child(2):hover .project_img::after {
+            transform: scale(1.05);
+            transition: all 0.5s;
+            transform-origin: center center;
         }
 
         .project_link:nth-child(3) .project_img {
