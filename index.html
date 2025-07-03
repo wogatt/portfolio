@@ -349,23 +349,28 @@
             height: 320px;
             text-align: center;
             position: relative;
+            background: rgba(255, 255, 255, 0.75);
+            overflow: hidden;
         }
 
-        .project_link .project_img img {
-            display: inline-block;
+
+        .project_link:nth-child(1) .project_img::after {
+            content: "";
+            display: block;
+            background: url(images/thumnail01.png) center center / auto 100% no-repeat;
+            width: 227px;
+            height: 320px;
             position: relative;
-            width: auto;
-            height: 100%;
-            object-fit: cover;
+            margin: 0px auto;
         }
 
-        .project_link:first-child .project_img {
-            background: url(images/thumnail01.png) center center / auto 100% no-repeat;
-            width: 220px;
+        .project_link:nth-child(1):hover .project_img::after {
+            transform: scale(1.05);
+            transition: all 0.5s;
+            transform-origin: center center;
         }
-
         .project_link:nth-child(2) .project_img {
-            background: url(images/thumnail01.png) center center / auto 100% no-repeat;
+            background: url(images/thumnail02.png) center center / auto 100% no-repeat;
         }
 
         .project_link:nth-child(3) .project_img {
@@ -376,11 +381,21 @@
             background: url(images/thumnail01.png) center center / auto 100% no-repeat;
         }
 
-        .project_link:nth-child(5) .project_img {
+        .project_link:nth-child(5) .project_img::after {
+            content: "";
+            display: block;
             background: url(images/thumnail05.png) center center / auto 100% no-repeat;
-            width: 226px;
-            border: solid 1px #000;
-            box-sizing: border-box;
+            width: 198px;
+            height: 280px;
+            position: relative;
+            margin: 20px auto;
+            box-shadow: 0px 0px 10px #7c7c7c;
+        }
+
+        .project_link:nth-child(5):hover .project_img::after {
+            transform: scale(1.05);
+            transition: all 0.5s;
+            transform-origin: center center;
         }
 
         .project_link:nth-child(6) .project_img {
