@@ -51,7 +51,6 @@
             }
         }
 
-
         #back-to-top {
             width: 45px;
             height: 45px;
@@ -74,6 +73,17 @@
         #back-to-top.show {
             opacity: 1;
             pointer-events: auto;
+        }
+
+        .inview {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease-out;
+        }
+
+        .inview.mov {
+            opacity: 1;
+            transform: translateY(0);
         }
 
 
@@ -162,6 +172,7 @@
             height: 40px;
             border-radius: 25px;
             background: #fff;
+            transition: 0.5s all;
         }
 
         /* Linkedin */
@@ -182,9 +193,8 @@
             border: solid 1px #fff;
         }
 
-        #social a:hover{
+        #social a:hover {
             opacity: 0.5;
-            transition: 0.5 all;
         }
 
         h1,
@@ -578,6 +588,13 @@
             height: auto;
         }
 
+        .skills .skills_con:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+        .skills .skills_con:nth-child(3) {
+            transition-delay: 0.4s;
+        }
+
         .skills .skills_con .skill_img {
             height: 180px;
             background: #eee;
@@ -804,7 +821,7 @@
                 <div class="projects">
 
                     <!-- 1st project -->
-                    <div class="project_link">
+                    <div class="project_link inview">
                         <!-- Thumnail -->
                         <a href="page01/index.html">
                             <div class="project_img"></div>
@@ -817,7 +834,7 @@
                     </div>
 
                     <!-- 2nd project -->
-                    <div class="project_link">
+                    <div class="project_link inview">
                         <!-- Thumnail -->
                         <a href="page02/index.html">
                             <div class="project_img"></div>
@@ -829,7 +846,7 @@
                     </div>
 
                     <!-- 3rd project -->
-                    <div class="project_link">
+                    <div class="project_link inview">
                         <!-- Thumnail -->
                         <div class="project_img"></div>
                         <p class="case">Conceptual Case Study</p>
@@ -839,7 +856,7 @@
                     </div>
 
                     <!-- 4th project -->
-                    <div class="project_link">
+                    <div class="project_link inview">
                         <!-- Thumnail -->
                         <div class="project_img"></div>
                         <p class="case">Real Project</p>
@@ -849,7 +866,7 @@
                     </div>
 
                     <!-- 5th project -->
-                    <div class="project_link">
+                    <div class="project_link inview">
                         <div class="project_img"></div>
                         <p class="case">Real Project</p>
                         <span class="line"></span>
@@ -858,7 +875,7 @@
                     </div>
 
                     <!-- 6th project -->
-                    <div class="project_link">
+                    <div class="project_link inview">
                         <div class="project_img"></div>
                         <p class="case">Real Project</p>
                         <span class="line"></span>
@@ -891,7 +908,7 @@
                     <div class="skills">
 
                         <!-- UX UI Design -->
-                        <div class="skills_con">
+                        <div class="skills_con inview">
                             <div class="skill_img"></div>
                             <h3>UX UI Design</h3>
                             <span class="line"></span>
@@ -903,7 +920,7 @@
                         </div>
 
                         <!-- Graphic Design -->
-                        <div class="skills_con">
+                        <div class="skills_con inview">
                             <div class="skill_img"></div>
                             <h3>Graphic Design</h3>
                             <span class="line"></span>
@@ -913,7 +930,7 @@
                         </div>
 
                         <!-- Coding -->
-                        <div class="skills_con">
+                        <div class="skills_con inview">
                             <div class="skill_img"></div>
                             <h3>Coding</h3>
                             <span class="line"></span>
@@ -1084,6 +1101,25 @@
                     loading.style.display = 'none';
                 }, 500); // フェードアウトの時間に合わせる
             }
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const targets = document.querySelectorAll(".inview");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("mov");
+                        observer.unobserve(entry.target); // 一度だけ発火
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            targets.forEach(target => observer.observe(target));
         });
     </script>
 
