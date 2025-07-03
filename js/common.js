@@ -55,21 +55,21 @@ function startInviewObserver() {
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const title = document.getElementById("tit");
-    if (!title) return;
+// document.addEventListener("DOMContentLoaded", () => {
+//     const title = document.getElementById("tit");
+//     if (!title) return;
 
-    const text = title.textContent;
-    title.textContent = "";
+//     const text = title.textContent;
+//     title.textContent = "";
 
-    const len = text.length;
+//     const len = text.length;
 
-    for (let i = 0; i < len; i++) {
-        const span = document.createElement("span");
-        span.textContent = text[i];
+//     for (let i = 0; i < len; i++) {
+//         const span = document.createElement("span");
+//         span.textContent = text[i];
 
-        const delay = 0.4 * Math.pow(0.75, len - 1 - i);
-        span.style.animationDelay = `${delay}s`;
-        title.appendChild(span);
-    }
-});
+//         const delay = 0.4 * Math.pow(0.75, len - 1 - i);
+//         span.style.animationDelay = `${delay}s`;
+//         title.appendChild(span);
+//     }
+// });
