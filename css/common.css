@@ -96,7 +96,7 @@ footer {
 nav {
     background: #000;
     color: #fff;
-    height: 60px;
+    height: 50px;
     padding: 0px 15px;
     box-sizing: border-box;
     display: flex;
@@ -112,7 +112,7 @@ nav {
 nav a {
     color: #fff;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 nav #logo {
@@ -126,7 +126,7 @@ nav #logo {
     width: 100%;
     position: relative;
     margin: auto;
-    height: 60px;
+    height: 50px;
 }
 
 #nav {
@@ -142,15 +142,15 @@ nav #logo {
 
 #nav a {
     text-align: center;
-    line-height: 60px;
+    line-height: 50px;
 }
 
 #nav a:first-child {
-    width: 80px;
+    width: 87px;
 }
 
 #nav a:nth-child(2) {
-    width: 86px;
+    width: 87px;
 }
 
 #social {
@@ -161,8 +161,8 @@ nav #logo {
 
 #social a {
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 25px;
     background: #fff;
     transition: 0.5s all;
@@ -174,7 +174,7 @@ nav #logo {
 }
 
 #social a:nth-child(2) {
-    background: url(../images/social_icon02.png) center top 11px / auto 50% #fff no-repeat;
+    background: url(../images/social_icon02.png) center top 8px / auto 50% #fff no-repeat;
     border: solid 1px #fff;
 }
 
