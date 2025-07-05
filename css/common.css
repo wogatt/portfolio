@@ -46,7 +46,7 @@ body {
     right: 30px;
     padding: 10px 16px;
     font-size: 20px;
-    background-color: black;
+    background-color: #FF9201;
     color: white;
     border: none;
     border-radius: 50%;
@@ -138,6 +138,7 @@ nav #logo {
     display: flex;
     justify-content: space-between;
     gap: 60px;
+    transform: translateX(-24px);
 }
 
 #nav a {
