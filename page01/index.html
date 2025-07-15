@@ -422,6 +422,51 @@
             line-height: 1.2;
             margin: 0 0 5px 0;
         }
+
+        /* モーダル背景 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            animation: zoom 0.3s forwards;
+            margin: auto;
+            display: block;
+            top: 50%;
+            position: relative;
+            transform-origin: top;
+        }
+
+        /* 閉じるボタン */
+        .close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0.5) translateY(-50%);
+            }
+
+            to {
+                transform: scale(1) translateY(-50%);
+            }
+        }
     </style>
 </head>
 
@@ -493,9 +538,13 @@
                     </div>
 
                     <!-- main image -->
-                    <div>
+                    <div id="hero_img"></div>
+                </div>
 
-                    </div>
+                <!-- モーダル -->
+                <div id="modal" class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="modalImage" alt="enlarged hero image">
                 </div>
             </section>
 
@@ -636,7 +685,7 @@
                     <div id="design03" class="design_con scroll_target">
 
                         <!-- process headline -->
-                        <h3>Steakholder Mapping</h3>
+                        <h3>Stakeholder Mapping</h3>
 
                         <div class="inview">
                             <p>
@@ -842,7 +891,74 @@
         });
     </script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroImg = document.getElementById('hero_img'); // ここを使うためにCSSで直接設定がおすすめ
+            const modal = document.getElementById('modal');
+            const modalImage = document.getElementById('modalImage');
+            const closeBtn = document.querySelector('.close');
+
+            heroImg.style.cursor = 'pointer';
+
+            heroImg.addEventListener('click', () => {
+                const bgImage = getComputedStyle(heroImg).backgroundImage;
+                const imageUrlMatch = bgImage.match(/url\(["']?(.*?)["']?\)/);
+
+                if (imageUrlMatch && imageUrlMatch[1]) {
+                    modalImage.src = imageUrlMatch[1];
+                    modal.style.display = 'block';
+                } else {
+                    console.error('背景画像が見つかりません');
+                }
+            });
+
+            closeBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+
     <script src="../js/common.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroImg = document.getElementById('hero_img'); // ← IDを使って取得
+            const modal = document.getElementById('modal');
+            const modalImage = document.getElementById('modalImage');
+            const closeBtn = document.querySelector('.close');
+
+            heroImg.style.cursor = 'pointer';
+
+            heroImg.addEventListener('click', () => {
+                const bgImage = getComputedStyle(heroImg).backgroundImage;
+                const match = bgImage.match(/url\(["']?(.*?)["']?\)/);
+
+                if (match && match[1]) {
+                    modalImage.src = match[1];
+                    modal.style.display = 'block';
+                } else {
+                    console.error('背景画像が見つかりません');
+                }
+            });
+
+            closeBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
 
 
 </body>
