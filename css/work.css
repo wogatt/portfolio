@@ -134,6 +134,7 @@
             color: #000;
             font-weight: 300;
             margin: auto 0;
+            text-align: left;
         }
 
         /* My role */
@@ -154,6 +155,9 @@
         /* project image */
         #hero_con div:last-child {
             background: url(../images/thumnail01.png) no-repeat center right / auto 100%;
+        }
+        #work05 #hero_con div:last-child {
+            background: url(../images/thumnail02.png) no-repeat center right / auto 100%;
         }
 
 
